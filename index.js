@@ -1,18 +1,12 @@
-// const express = require('express');
-// const mongoose = require('mongoose');
+require('dotenv').config(); 
+// require is used to import code from other files in JavaScript.
 
-// const app = express();
-
-// app.use(express.json());
-
-// app.listen(3000, () => {
-//     console.log(`Server Started at ${3000}`)
-// })
-
-require('dotenv').config();
+// config() in JavaScript loads program settings, simplifying access to crucial information like database connections or API keys.
 
 const express = require('express');
+// developers to create web applications by providing ready-made tools and structures. 
 const mongoose = require('mongoose');
+// developers to store and retrieve data in databases by providing a simple way to interact with them
 const mongoString = process.env.DATABASE_URL;
 
 mongoose.connect(mongoString);
@@ -39,8 +33,5 @@ const routes = require('./routes/routes');
 app.use('/api', routes)
 
 
-// //Post Method
-// router.post('/post', (req, res) => {
-//     res.send('Post API')
-// })
+
 
