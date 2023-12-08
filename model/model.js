@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+//imports the Mongoose library into your code. 
+//It allows you to interact with MongoDB using a convenient and structured way provided by Mongoose.
 
 const dataSchema = new mongoose.Schema({
     name: {
@@ -11,20 +13,10 @@ const dataSchema = new mongoose.Schema({
     }
 })
 
+//This creates a new Mongoose schema for your data. 
+//A schema defines the structure of your data and any rules or constraints on that data.
+// the schema defines that the data should have a 'name' property, which is a required string, and an 'age' property, which is a required number.
+
 module.exports = mongoose.model('Data', dataSchema)
-
-//add
-// router.post('/post', async (req, res) => {
-//     const data = new Model({
-//         name: req.body.name,
-//         age: req.body.age
-//     })
-
-//     try {
-//         const dataToSave = await data.save();
-//         res.status(200).json(dataToSave)
-//     }
-//     catch (error) {
-//         res.status(400).json({message: error.message})
-//     }
-// })
+//A model is a way to interact with a MongoDB collection.
+// This allows you to use the model to perform operations on the MongoDB collection associated with the 'Data' model.
